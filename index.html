@@ -81,6 +81,8 @@
   .tile .big{ font-size:40px; line-height:1.05; font-weight:275; letter-spacing:.02em; color:var(--cyan);
     font-variant-numeric:tabular-nums;}
   .tile .big.warn{ color:var(--amber);}
+  .tile .cat{ display:block; font-size:12.5px; letter-spacing:.24em; text-transform:uppercase; font-weight:600;
+    color:var(--dim); margin-bottom:6px;}
   .tile p{ color:var(--dim); font-size:14.5px; margin:0; flex:1;}
   .chip{ align-self:flex-start; font-size:11.5px; letter-spacing:.06em; color:var(--cyan-dim);
     border:1px solid var(--line); border-radius:999px; padding:3px 11px; background:rgba(95,226,255,.05);}
@@ -224,15 +226,15 @@
     <section id="home-summary">
       <h2 style="text-align:center; margin-bottom:26px">Findings at a glance</h2>
       <div class="grid g3">
-        <div class="tile"><span class="big disp">Market<br>·<br>Booming</span>
+        <div class="tile"><span class="cat">Market</span><span class="big disp">Booming</span>
           <p><b>The market is compounding, not cooling.</b> Pokémon Co. grew 29% to $3.34B. Magic grew 36% in one quarter.
           Whatnot doubled to $6B in sales. Demand is outrunning print capacity across the board.</p>
           <a class="chip" href="#market" data-page="market">Full market download →</a></div>
-        <div class="tile"><span class="big disp">Live Selling<br>·<br>Ahead</span>
+        <div class="tile"><span class="cat">Live Selling</span><span class="big disp">Ahead</span>
           <p><b>Gamer's Choice already runs the winning playbook.</b> Live selling with paid hosts, a sanctioned Pokémon
           League, daily content with a real voice, and staff that customers ask for by name.</p>
           <a class="chip" href="#shop" data-page="shop">What the research found →</a></div>
-        <div class="tile"><span class="big warn disp">Website<br>·<br>15/70</span>
+        <div class="tile"><span class="cat">Website</span><span class="big warn disp">15/70</span>
           <p><b>The website is the outlier.</b> A 7-part storefront review scored gamerschoice.com 15 of 70:
           no headline, no way for a fan to leave their email, and none of the shop's personality at checkout.</p>
           <a class="chip" href="#audit" data-page="audit">See the audit →</a></div>
