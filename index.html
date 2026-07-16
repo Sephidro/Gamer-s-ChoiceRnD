@@ -13,7 +13,7 @@
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
   body{ margin:0; background:var(--bg); color:var(--ink);
     font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
-    font-size:16.5px; line-height:1.65; }
+    font-size:21px; line-height:1.6; }
   .disp{ font-weight:275; letter-spacing:.045em; text-transform:uppercase; }
   .mono{ font-family:Consolas,"SF Mono",ui-monospace,Menlo,monospace; }
   a{ color:var(--cyan); text-decoration:none; }
@@ -44,11 +44,15 @@
   .hero .sub{ max-width:64ch; margin:0 auto 30px; color:var(--dim); font-size:clamp(16px,2vw,18.5px);}
   .hero .sub strong{ color:var(--ink);}
   .btns{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:64px;}
-  .btn{ display:inline-block; padding:12px 26px; border-radius:999px; font-size:14.5px; letter-spacing:.04em;}
+  .btn{ display:inline-block; padding:15px 32px; border-radius:999px; font-size:19px; letter-spacing:.04em;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;}
   .btn.solid{ background:var(--panel); color:var(--ink); border:1px solid var(--line-2); }
-  .btn.solid:hover{ background:var(--card); text-decoration:none;}
+  .btn.solid:hover{ background:var(--card); border-color:var(--cyan); box-shadow:var(--glow);
+    transform:translateY(-3px) scale(1.04); text-decoration:none;}
   .btn.line{ border:1px solid var(--cyan); color:var(--cyan); }
-  .btn.line:hover{ background:rgba(95,226,255,.1); text-decoration:none;}
+  .btn.line:hover{ background:rgba(95,226,255,.12); box-shadow:var(--glow);
+    transform:translateY(-3px) scale(1.04); text-decoration:none;}
+  .btn:active{ transform:translateY(-1px) scale(0.98); }
   .lightbar{ height:5px; width:min(560px,72%); margin:0 auto; background:var(--cyan);
     border-radius:999px 999px 0 0; box-shadow:0 -2px 40px 14px rgba(95,226,255,.4), var(--glow); }
 
@@ -65,12 +69,13 @@
   .page{ padding:26px 0 30px; }
   section{ padding:44px 0 6px; }
   h2{ font-size:clamp(28px,4.6vw,44px); font-weight:275; letter-spacing:.05em; text-transform:uppercase;
-    margin:0 0 8px; text-wrap:balance;}
+    margin:0 0 8px; text-wrap:balance; text-align:center;}
   h2 b{font-weight:600; color:var(--cyan);}
   .kicker{ font-size:11.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--cyan-dim); display:block; margin-bottom:10px;}
-  .intro{ color:var(--dim); max-width:70ch; font-size:17.5px; margin:0 0 26px;}
+  .intro{ color:var(--dim); max-width:70ch; font-size:21px; margin:0 auto 26px; text-align:center;}
   .intro strong,p strong,li strong{ color:var(--ink);}
   p{ max-width:72ch; }
+  .center-block{ max-width:70ch; margin:0 auto 26px; text-align:center;}
   h3{ font-size:19px; margin:0 0 6px; font-weight:600;}
 
   .grid{ display:grid; gap:16px; margin:24px 0;}
@@ -78,19 +83,24 @@
   .g2{ grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
   .tile{ background:linear-gradient(180deg,var(--card),var(--panel)); border:1px solid var(--line);
     border-radius:var(--rad); padding:22px 22px 18px; display:flex; flex-direction:column; gap:8px;}
+  .tile-link{ text-decoration:none; color:inherit; cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+  .tile-link:hover{ transform:scale(1.035); border-color:var(--line-2); box-shadow:var(--glow); text-decoration:none;}
+  .tile-link:active{ transform:scale(0.98); }
+  .tile-link .chip{ pointer-events:none;}
   .tile .big{ font-size:40px; line-height:1.05; font-weight:275; letter-spacing:.02em; color:var(--cyan);
     font-variant-numeric:tabular-nums;}
   .tile .big.warn{ color:var(--amber);}
   .tile .cat{ display:block; font-size:12.5px; letter-spacing:.24em; text-transform:uppercase; font-weight:600;
     color:var(--dim); margin-bottom:6px;}
-  .tile p{ color:var(--dim); font-size:14.5px; margin:0; flex:1;}
+  .tile p{ color:var(--dim); font-size:19px; margin:0; flex:1;}
   .chip{ align-self:flex-start; font-size:11.5px; letter-spacing:.06em; color:var(--cyan-dim);
     border:1px solid var(--line); border-radius:999px; padding:3px 11px; background:rgba(95,226,255,.05);}
   .chip:hover{ color:var(--cyan); border-color:var(--cyan); text-decoration:none;}
   .chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px;}
 
   .quote{ border-left:2px solid var(--cyan); padding:4px 0 4px 16px; margin:14px 0;
-    color:var(--dim); font-size:15px; max-width:66ch;}
+    color:var(--dim); font-size:20px; max-width:66ch;}
   .quote b{color:var(--ink);}
   .note{ font-size:13px; color:var(--dim); opacity:.85;}
 
@@ -113,7 +123,7 @@
   .detail{ max-width:760px; margin:22px auto 0; background:var(--panel); border:1px solid var(--line-2);
     border-radius:var(--rad); padding:20px 24px; }
   .detail h3{ color:var(--cyan);}
-  .detail p{ color:var(--dim); font-size:15px; margin:6px 0 0;}
+  .detail p{ color:var(--dim); font-size:20px; margin:6px 0 0;}
   .detail p b{color:var(--ink);}
 
   /* ------- annotated screenshot ------- */
@@ -128,48 +138,48 @@
   .callouts{ display:flex; flex-direction:column; gap:16px;}
   .co{ border-left:2px solid var(--amber); padding:2px 0 2px 14px;}
   .co .k{ font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--amber); display:block;}
-  .co h3{ font-size:16.5px; margin:4px 0 2px;}
-  .co p{ font-size:14px; color:var(--dim); margin:0;}
+  .co h3{ font-size:19px; margin:4px 0 2px;}
+  .co p{ font-size:19px; color:var(--dim); margin:0;}
   @media (max-width:760px){ .anno{ grid-template-columns:1fr; } }
 
   /* ------- scorecard ------- */
-  table.score{ width:100%; border-collapse:collapse; margin:22px 0; font-size:15px;}
+  table.score{ width:100%; border-collapse:collapse; margin:22px 0; font-size:19px;}
   table.score td{ padding:11px 10px; border-bottom:1px solid var(--line); vertical-align:top;}
   table.score td:first-child{ font-weight:600; white-space:nowrap;}
   table.score td:last-child{ text-align:right; font-variant-numeric:tabular-nums; font-weight:600; color:var(--cyan); white-space:nowrap;}
   table.score td.bad:last-child, table.score tr.bad td:last-child{ color:var(--amber);}
   table.score td.mid{ color:var(--dim); font-weight:400; white-space:normal;}
-  .totalrow td{ border-top:2px solid var(--line-2); font-size:17px;}
+  .totalrow td{ border-top:2px solid var(--line-2); font-size:21px;}
 
   /* ------- findings / plays ------- */
   .find{ background:var(--panel); border:1px solid var(--line); border-radius:var(--rad);
     padding:20px 24px; margin:16px 0;}
   .find h3{ display:flex; gap:12px; align-items:baseline; flex-wrap:wrap;}
   .find h3 .sc{ font-size:13px; color:var(--amber); font-variant-numeric:tabular-nums;}
-  .find p{ color:var(--dim); font-size:15px; margin:8px 0 0;}
+  .find p{ color:var(--dim); font-size:20px; margin:8px 0 0;}
   .find p b{ color:var(--ink);}
   .play{ background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--cyan);
     border-radius:var(--rad); padding:20px 24px; margin:16px 0;}
   .play h3{ display:flex; gap:12px; align-items:baseline; flex-wrap:wrap;}
   .eff{ font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--cyan-dim);
     border:1px solid var(--line-2); border-radius:999px; padding:2px 10px;}
-  .play p{ color:var(--dim); font-size:15px; margin:8px 0 0;}
+  .play p{ color:var(--dim); font-size:20px; margin:8px 0 0;}
   .play p b{ color:var(--ink);}
 
   .est{ background:var(--bg2); border:1px dashed var(--amber); border-radius:var(--rad); padding:22px 24px; margin:30px 0;}
   .est h3{ color:var(--amber); font-size:13px; letter-spacing:.2em; text-transform:uppercase;}
-  .est table{ width:100%; border-collapse:collapse; font-size:14.5px;}
+  .est table{ width:100%; border-collapse:collapse; font-size:19px;}
   .est td{ padding:8px 10px 8px 0; border-bottom:1px solid var(--line); }
   .est td:last-child{ text-align:right; white-space:nowrap; font-weight:600; font-variant-numeric:tabular-nums;}
   .est .note{ margin:12px 0 0;}
 
   /* ------- sources ------- */
-  .sources ol{ padding-left:22px; font-size:14.5px;}
+  .sources ol{ padding-left:22px; font-size:19px;}
   .sources li{ margin:10px 0; color:var(--dim); overflow-wrap:anywhere;}
   .sources li b{ color:var(--ink);}
   .method{ background:var(--panel); border:1px solid var(--line); border-radius:var(--rad); padding:20px 24px; margin:26px 0;}
   .method h3{ font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--cyan-dim);}
-  .method p,.method li{ font-size:14.5px; color:var(--dim);}
+  .method p,.method li{ font-size:19px; color:var(--dim);}
   .method ul{ padding-left:18px;}
 
   .next-links{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); margin:26px 0 10px;}
@@ -226,20 +236,20 @@
     <section id="home-summary">
       <h2 style="text-align:center; margin-bottom:26px">Findings at a glance</h2>
       <div class="grid g3">
-        <div class="tile"><span class="cat">Market</span><span class="big disp">Booming</span>
+        <a class="tile tile-link" href="#market" data-page="market"><span class="cat">Market</span><span class="big disp">Booming</span>
           <p><b>The market is compounding, not cooling.</b> Pokémon Co. grew 29% to $3.34B. Magic grew 36% in one quarter.
           Whatnot doubled to $6B in sales. Demand is outrunning print capacity across the board.</p>
-          <a class="chip" href="#market" data-page="market">Full market download →</a></div>
-        <div class="tile"><span class="cat">Live Selling</span><span class="big disp">Ahead</span>
+          <span class="chip">Full market download →</span></a>
+        <a class="tile tile-link" href="#shop" data-page="shop"><span class="cat">Live Selling</span><span class="big disp">Ahead</span>
           <p><b>Gamer's Choice already runs the winning playbook.</b> Live selling with paid hosts, a sanctioned Pokémon
           League, daily content with a real voice, and staff that customers ask for by name.</p>
-          <a class="chip" href="#shop" data-page="shop">What the research found →</a></div>
-        <div class="tile"><span class="cat">Website</span><span class="big warn disp">15/70</span>
+          <span class="chip">What the research found →</span></a>
+        <a class="tile tile-link" href="#audit" data-page="audit"><span class="cat">Website</span><span class="big warn disp">15/70</span>
           <p><b>The website is the outlier.</b> A 7-part storefront review scored gamerschoice.com 15 of 70:
           no headline, no way for a fan to leave their email, and none of the shop's personality at checkout.</p>
-          <a class="chip" href="#audit" data-page="audit">See the audit →</a></div>
+          <span class="chip">See the audit →</span></a>
       </div>
-      <p><strong>My thesis in one line:</strong> the giants win this market by owning scarcity (factories, licenses,
+      <p class="center-block"><strong>My thesis in one line:</strong> the giants win this market by owning scarcity (factories, licenses,
       grading, distribution), and the local shops that thrive are the ones who turn that scarcity into a reason to show
       up in person. Gamer's Choice already does both, in the store and on Whatnot. The website is the only channel
       where none of it shows. This isn't a shop that's behind. It's a shop that outgrew its own website faster than
