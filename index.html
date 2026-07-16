@@ -35,15 +35,15 @@
   .nav a.tab.on{ color:var(--bg); background:var(--cyan); font-weight:600;}
 
   /* ------- hero ------- */
-  .hero{ text-align:center; padding:84px 22px 0; position:relative; overflow:hidden;
+  .hero{ text-align:center; padding:52px 22px 0; position:relative; overflow:hidden;
     background:radial-gradient(900px 420px at 50% -60px, rgba(95,226,255,.14), transparent 70%);}
   .eyebrow{ font-size:12px; letter-spacing:.34em; text-transform:uppercase; color:var(--cyan-dim); }
-  .hero h1{ font-size:clamp(40px,7.6vw,86px); line-height:1.04; margin:20px auto 22px; max-width:15ch;
-    font-weight:275; letter-spacing:.04em; text-transform:uppercase; text-wrap:balance;}
+  .hero h1{ font-size:clamp(28px,5vw,54px); line-height:1.08; margin:16px auto 16px; max-width:16ch;
+    font-weight:275; letter-spacing:.03em; text-transform:uppercase; text-wrap:balance;}
   .hero h1 b{ font-weight:600; color:var(--cyan); }
-  .hero .sub{ max-width:64ch; margin:0 auto 30px; color:var(--dim); font-size:clamp(16px,2vw,18.5px);}
+  .hero .sub{ max-width:64ch; margin:0 auto 22px; color:var(--dim); font-size:clamp(15px,1.7vw,17px);}
   .hero .sub strong{ color:var(--ink);}
-  .btns{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:64px;}
+  .btns{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:28px;}
   .btn{ display:inline-block; padding:15px 32px; border-radius:999px; font-size:19px; letter-spacing:.04em;
     transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;}
   .btn.solid{ background:var(--panel); color:var(--ink); border:1px solid var(--line-2); }
@@ -55,6 +55,12 @@
   .btn:active{ transform:translateY(-1px) scale(0.98); }
   .lightbar{ height:5px; width:min(560px,72%); margin:0 auto; background:var(--cyan);
     border-radius:999px 999px 0 0; box-shadow:0 -2px 40px 14px rgba(95,226,255,.4), var(--glow); }
+  .scroll-cue{ display:flex; align-items:center; justify-content:center; width:38px; height:38px; margin:18px auto 22px;
+    color:var(--cyan-dim); border:1px solid var(--line); border-radius:50%; animation:cueBounce 2s ease-in-out infinite;
+    transition:color .18s ease, border-color .18s ease;}
+  .scroll-cue:hover{ color:var(--cyan); border-color:var(--cyan-dim); text-decoration:none;}
+  @keyframes cueBounce{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(7px);} }
+  @media (prefers-reduced-motion: reduce){ .scroll-cue{ animation:none; } }
 
   /* ------- ticker ------- */
   .ticker{ background:var(--bg2); border-block:1px solid var(--line); overflow:hidden; padding:11px 0;}
@@ -221,6 +227,10 @@
       <a class="btn line" href="#plan" data-page="plan">Straight to my recommendations →</a>
     </div>
     <div class="lightbar" aria-hidden="true"></div>
+    <a class="scroll-cue" href="#home-summary" aria-label="Scroll down to findings">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
   </div>
 
   <div class="ticker" aria-hidden="true"><div class="track">
