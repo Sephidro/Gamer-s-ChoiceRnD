@@ -179,6 +179,22 @@
   .est td:last-child{ text-align:right; white-space:nowrap; font-weight:600; font-variant-numeric:tabular-nums;}
   .est .note{ margin:12px 0 0;}
 
+  .bet{ background:linear-gradient(180deg,var(--card),var(--panel)); border:1px solid var(--cyan);
+    box-shadow:var(--glow); border-radius:var(--rad); padding:26px 28px; margin:26px 0;}
+  .bet h3{ color:var(--cyan); font-size:13px; letter-spacing:.2em; text-transform:uppercase; margin:0 0 12px;}
+  .bet .bignum{ font-size:40px; font-weight:275; color:var(--cyan); font-variant-numeric:tabular-nums; display:block; margin:2px 0 14px;}
+  .bet dl{ display:grid; grid-template-columns:auto 1fr; gap:6px 16px; margin:16px 0 0;}
+  .bet dt{ font-weight:600; color:var(--ink); white-space:nowrap;}
+  .bet dd{ margin:0; color:var(--dim);}
+
+  .flywheel{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; margin:20px 0; padding:0;}
+  .flywheel span{ background:var(--panel); border:1px solid var(--line); border-radius:999px; padding:8px 16px;
+    font-size:16px; color:var(--ink); white-space:nowrap;}
+  .flywheel .arrow{ background:none; border:none; color:var(--cyan-dim); padding:0; font-size:18px;}
+
+  .endgame-tag{ display:inline-block; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--amber);
+    border:1px solid var(--amber); border-radius:999px; padding:4px 12px; margin-bottom:16px;}
+
   /* ------- sources ------- */
   .sources ol{ padding-left:22px; font-size:19px;}
   .sources li{ margin:10px 0; color:var(--dim); overflow-wrap:anywhere;}
@@ -267,30 +283,21 @@
     </section>
 
     <section id="home-next">
-      <h2>Six moves, <b>in order</b></h2>
-      <p class="intro">None of these need new content. Each one just reuses something the shop already does well.
-      Full detail, with the evidence behind each, on <a href="#plan" data-page="plan">The Plan</a>.</p>
-      <div class="grid g2">
-        <div class="play"><h3>1 · Write the sign <span class="eff">One afternoon</span></h3>
-          <p>One headline on the homepage that says who Gamer's Choice is, in the voice from the feed. The shop's own
-          Facebook copy already says it. It's just not on the website.</p></div>
-        <div class="play"><h3>2 · Start the pull list <span class="eff">One week</span></h3>
-          <p>An email list with one promise: drop alerts, restock pings, pre-order priority. Turns 19.6K followers
-          into a list the shop can reach directly.</p></div>
-        <div class="play"><h3>3 · Put the stream on the homepage <span class="eff">One week</span></h3>
-          <p>A "LIVE NOW / next show tonight" block linking to Whatnot. Hosts get paid nightly. The site never mentions it.</p></div>
-        <div class="play"><h3>4 · Staff as main characters <span class="eff">One photo shoot</span></h3>
-          <p>Staff are already named in 5-star reviews. Faces and one line each on the site would carry that trust forward.</p></div>
-        <div class="play"><h3>5 · One voice everywhere <span class="eff">One rewrite</span></h3>
-          <p>Rewrite the About page in the feed voice. A shop that posts Chansey jokes shouldn't sound like a bank at checkout.</p></div>
-        <div class="play"><h3>6 · Balance the fine print <span class="eff">One page</span></h3>
-          <p>Keep "all sales final." Just add an authenticity and careful-packing promise next to it so first-timers actually commit.</p></div>
+      <h2>What I'd <b>do first</b></h2>
+      <p class="intro">Two interview rounds changed my read. The website tune-up still holds, but it's not the
+      priority anymore. Full detail, with the reasoning behind it, on <a href="#plan" data-page="plan">The Plan</a>.</p>
+      <div class="bet">
+        <h3>The experiment</h3>
+        <p>Collect customer wishlists. Send a personalized alert the moment those exact products go live or restock.
+        Measure whether repeat purchases go up by at least <b>10%</b> over 4 weeks. I'd run it myself, and it's the
+        foundation for a much bigger idea if it wins: making Gamer's Choice the home base for TCG collectors, not
+        just the biggest Whatnot seller.</p>
       </div>
       <div class="next-links">
         <a class="nl" href="#market" data-page="market"><span class="k">Section 01</span><b>The Market</b>: who's winning, who's struggling, why</a>
         <a class="nl" href="#shop" data-page="shop"><span class="k">Section 02</span><b>The Shop</b>: what an outside review of Gamer's Choice finds</a>
         <a class="nl" href="#audit" data-page="audit"><span class="k">Section 03</span><b>Site Audit</b>: the 15/70, with screenshots</a>
-        <a class="nl" href="#plan" data-page="plan"><span class="k">Section 04</span><b>The Plan</b>: six moves plus the math</a>
+        <a class="nl" href="#plan" data-page="plan"><span class="k">Section 04</span><b>The Plan</b>: the wishlist experiment, the endgame, and the website tune-up</a>
       </div>
     </section>
   </div>
@@ -569,8 +576,87 @@
 <main id="pg-plan" class="page" hidden>
   <div class="wrap">
     <section>
-      <h2>Six moves. <b>Zero new content needed.</b></h2>
-      <p class="intro">Each one reuses something the shop already does well. Ordered by impact per effort.</p>
+      <h2>What I'd actually <b>do first</b></h2>
+      <p class="intro">Two interview rounds in, I've got a better read on where they are and what they'd sit still
+      for. The audit still stands, but the sequencing changed. The website tune-up below can wait. This can't.</p>
+
+      <div class="bet">
+        <h3>The experiment</h3>
+        <p>Collect customer wishlists. Send a personalized alert the moment those specific products go live or
+        restock. Measure whether repeat purchases go up by at least <b>10%</b>.</p>
+        <dl>
+          <dt>Length</dt><dd>4 weeks</dd>
+          <dt>Who runs it</dt><dd>Me, directly</dd>
+          <dt>Week 1</dt><dd>Establish the current repeat-purchase rate. There's no email list yet, so there's no
+          baseline to measure against until I build one.</dd>
+          <dt>Build</dt><dd>Shopify already has wishlist and back-in-stock apps for exactly this. No custom
+          engineering, no ad spend, just a fast test with tools that already exist.</dd>
+          <dt>If it's a go</dt><dd>This becomes the foundation for everything below. If it's a no, I've proven that
+          cheaply instead of guessing which features to build next.</dd>
+        </dl>
+      </div>
+
+      <p><strong>Why this over the website list:</strong> a small, provable lift in repeat purchases is worth more
+      right now than a better homepage headline. It's also the fastest way to find out if the bigger idea below is
+      actually a lever worth pulling, before anyone plans that deeply around it.</p>
+    </section>
+
+    <section>
+      <h2>The thesis behind it</h2>
+      <p class="intro">Don't optimize for more viewers. Optimize for more qualified viewers. There's a massive
+      difference between 1,000 random people and 300 people actively looking for the exact cards being sold. The
+      second group almost always wins.</p>
+
+      <p class="center-block">Instead of trying to become <b>"the biggest Whatnot seller,"</b> become
+      <b>"the home base for TCG collectors."</b> Buying is just one thing they do there.</p>
+
+      <div class="flywheel" aria-label="The flywheel">
+        <span>Collectors search for answers</span><span class="arrow">→</span>
+        <span>Gamer's Choice helps them</span><span class="arrow">→</span>
+        <span>Gamer's Choice learns about them</span><span class="arrow">→</span>
+        <span>Personalizes their experience</span><span class="arrow">→</span>
+        <span>They buy more often</span><span class="arrow">→</span>
+        <span>More data, better personalization</span>
+      </div>
+
+      <p class="center-block">No ad spend needed, which matters since they've already shown hesitation there. It's a
+      standard flywheel that feeds itself. Be more useful, make more money. The goal is to own discovery instead of
+      renting it from Whatnot's algorithm: give people a reason to find Gamer's Choice before they're ready to buy.</p>
+    </section>
+
+    <section>
+      <span class="endgame-tag">Endgame, if the experiment wins</span>
+      <h2>Where this <b>goes next</b></h2>
+      <p class="intro">None of this gets pitched as a plan yet. It's what the wishlist experiment is actually
+      testing the foundation for.</p>
+
+      <div class="find"><h3>Own discovery</h3>
+        <p>Release trackers, market updates, meta changes, set guides, product availability, tournament news, price
+        movement, collection tools. The goal isn't "content." The goal is becoming useful enough that people show up
+        before they're ready to buy anything.</p></div>
+
+      <div class="find"><h3>Own the customer relationship</h3>
+        <p>Not "email captured." A customer profile: wishlist, favorite games, favorite Pokémon, budget, buying
+        habits, collection goals. Every interaction gets smarter once that exists.</p></div>
+
+      <div class="find"><h3>Personalize everything</h3>
+        <p>Instead of "BIG STREAM TONIGHT, massive slabs" blasted to everyone, something like: <i>"Xavier, three
+        Japanese Eeveelution cards on your wishlist go live at 8:30."</i> One message, one customer, one real reason
+        to come back. Worth infinitely more than a broadcast.</p></div>
+
+      <div class="find"><h3>Build identity</h3>
+        <p>People don't just collect cardboard, they collect identities: Umbreon Collector, Vintage Hunter, PSA
+        Collector, Master Set Builder, Waifu Collector, One Piece Competitor. Help them express that and the
+        community follows the identity, not just the inventory.</p></div>
+
+      <p class="note">The honest open question here is who runs the content side of this long-term, since staff are
+      already running live streams most nights. That's a phase 2 question. I'd rather test if this is really a lever
+      worth pulling before planning that deeply.</p>
+    </section>
+
+    <section>
+      <h2>The website tune-up <b>(worth doing, just not first)</b></h2>
+      <p class="intro">The original six moves from the site audit still hold. Lower priority now, not wrong.</p>
 
       <div class="play"><h3>1 · Write the sign <span class="eff">One afternoon</span></h3>
         <p>One homepage headline in the feed voice: <b>"The LIC card shop that streams the rips live."</b> Who the shop
@@ -579,7 +665,7 @@
       <div class="play"><h3>2 · Start the pull list <span class="eff">One week</span></h3>
         <p>Email signup with one honest promise: <b>drop alerts, restock pings, pre-order priority.</b> A reviewer
         discovered the pre-order advantage by accident; gating it behind a signup turns every curious visitor into
-        someone the shop can reach directly. Highest-value fix on this list.</p></div>
+        someone the shop can reach directly. This one also feeds directly into the wishlist experiment above.</p></div>
       <div class="play"><h3>3 · Put the stream on the homepage <span class="eff">One week</span></h3>
         <p>A "LIVE NOW / next show tonight 8pm" block linking to Whatnot. Every site visitor is a potential viewer, and
         Whatnot's own numbers say 80% of buyers return monthly. That's about as sticky as a customer gets.</p></div>
@@ -598,7 +684,7 @@
         already buys slabs every weekend. Same muscle, pointed forward.</p></div>
 
       <div class="est">
-        <h3>What the gap is worth (my estimate, math shown)</h3>
+        <h3>What the old gap was worth (my estimate, math shown)</h3>
         <table>
           <tr><td>A repeat collector spends per year (singles, sealed, pre-orders)</td><td>~$300</td></tr>
           <tr><td>Monthly site visitors a 19.6K-follower shop with nightly streams plausibly generates</td><td>~10,000</td></tr>
@@ -611,11 +697,6 @@
         data for this shop. The inputs are conservative assumptions worth arguing with, that's why they're shown.
         Every other number in these notes traces to a linked source.</p>
       </div>
-
-      <h3>The first 30 days</h3>
-      <p>If only three things happen this month: <b>write the sign (move 1)</b>, <b>launch the pull list (move 2)</b>,
-      and <b>put the stream on the homepage (move 3)</b>. Those three fix the lowest scores in the audit simultaneously
-      and start turning the audience the shop already owns into a list it actually controls.</p>
     </section>
   </div>
 </main>
